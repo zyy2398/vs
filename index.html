@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N0ts | 一个热爱游戏的咸鱼</title>
-    <meta name="description"
-        content="即使前方的路看似绝境，也要有硬生生给自己开出一条路的勇气">
-    <meta name="keywords" content="n0ts,nutssss,坚果,主页,博客,tqy,xhj">
+    <title>网站标题</title>
+    <meta name="description" content="网站介绍">
+    <meta name="keywords" content="关键词">
     <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    
+    <div id="Indexbox">
+        <div class="menu">
+            <img src="./favicon.ico" alt="favicon">
+            <ul>
+                <li>
+                    <a href="https://n0ts.cn/" target="_blank">首页(L)</a>
+                </li>
+                <li>
+                    <a href="https://blog.n0ts.cn/me" target="_blank">关于我(O)</a>
+                </li>
+                <li>
+                    <a href="https://blog.n0ts.cn/category/mywork" target="_blank">我的垃圾项目(V)</a>
+                </li>
+                <li>
+                    <a href="https://lovexhj.cn/" target="_blank">我的爱人(E)</a>
+                </li>
+                <li>
+                    <a href="https://note.n0ts.cn/" target="_blank">笔记(X)</a>
+                </li>
+                <li>
+                    <a href="https://blog.n0ts.cn/" target="_blank">博客(H)</a>
+                </li>
+                <li>
+                    <a href="https://blog.n0ts.cn/msg" target="_blank">留言(J)</a>
+                </li>
+            </ul>
+            <p>I am N0ts</p>
+        </div>
+
+        <div class="leftBar">
+            <div class="leftBar-Buttom1" onclick="MenuClick_Open()">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+            </div>
+            <div class="leftBar-Menu" id="leftBar-Menu">
+                <div class="leftBar-Buttom2" onclick="MenuClick_Close()">
+                    <div class="div1"></div>
+                    <div class="div2"></div>
+                </div>
+            </div>
+        </div>     
+    </div>
+
+    <!-- 侧栏动画 -->
+    <script>
+        function MenuClick_Open() {
+            var menu = document.getElementById("leftBar-Menu");
+            menu.classList.add("leftBar-Menu-Click");
+        }
+
+        function MenuClick_Close() {
+            var menu = document.getElementById("leftBar-Menu");
+            menu.classList.remove("leftBar-Menu-Click");
+        }
+    </script>
 </body>
+
 </html>

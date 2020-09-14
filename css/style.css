@@ -1,4 +1,160 @@
 * {
     margin: 0;
     padding: 0;
+    color: rgb(159, 178, 191);
+}
+
+html, body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
+    display: inline;
+}
+
+/* 主盒子 */
+#Indexbox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: rgb(33, 37, 43);
+}
+
+/* 顶部菜单 */
+.menu {
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    background-color: rgb(33, 37, 43);
+    font-size: 0.7rem;
+    text-align: center;
+    color: white;
+}
+
+.menu img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+}
+
+.menu ul {
+    position: absolute;
+    left: 50px;
+}
+
+.menu ul li a {
+    display: block;
+    float: left;
+    padding: 0 10px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu p {
+    font-size: 1rem;
+    line-height: 35px;
+}
+
+/* 左侧介绍 */
+.leftBar {
+    width: 50px;
+    height: 100%;
+    background-color: rgb(51, 56, 66);
+    position: relative;
+}
+
+.leftBar-Buttom1 {
+    width: 100%;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 0;
+    top: 40px;
+    z-index: 2;
+}
+
+.leftBar-Buttom1 .div1, .leftBar-Buttom1 .div2, .leftBar-Buttom1 .div3 {
+    width: 50%;
+    height: 3px;
+    border-radius: 10px;
+    margin: 0 auto 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s;
+}
+
+.leftBar-Buttom1:hover .div1 {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.leftBar-Buttom1:hover .div2 {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.leftBar-Buttom1:hover .div3 {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.leftBar-Menu {
+    width: 300px;
+    height: 100%;
+    background-color: rgb(51, 56, 66);
+    position: relative;
+    top: -40px;
+    transition: all .5s;
+    z-index: 2;
+    transform: translateX(-300px);
+    opacity: 0;
+}
+
+.leftBar-Menu-Click {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.leftBar-Buttom2 {
+    width: 100%;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 0;
+    top: 50px;
+    z-index: 3;
+    transition: all 0.3s;
+}
+
+.leftBar-Buttom2 .div1, .leftBar-Buttom2 .div2 {
+    width: 10%;
+    height: 3px;
+    border-radius: 10px;
+    margin: 0 auto 5px;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.leftBar-Buttom2 .div1 {
+    transform: rotate(45deg);
+}
+
+.leftBar-Buttom2 .div2 {
+    transform: rotate(-45deg);
+    top: -8px;
+}
+
+.leftBar-Buttom2:hover {
+    transform: scale(1.1);
 }
