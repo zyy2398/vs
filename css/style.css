@@ -26,11 +26,15 @@ h2 {
     margin: 10px 0;
 }
 
+p, span, h2 {
+    cursor: default;
+}
+
 .blur {
-    filter: blur(10px);
-    -o-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -webkit-filter: blur(10px);
+    filter: blur(1px);
+    -o-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -webkit-filter: blur(1px);
 }
 
 /* 主盒子 */
@@ -52,6 +56,10 @@ h2 {
     font-size: 0.7rem;
     text-align: center;
     color: white;
+    transition: all .5s;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
 }
 
 .menu img {
@@ -74,6 +82,7 @@ h2 {
     height: 35px;
     line-height: 35px;
     text-align: center;
+    transition: all .3s;
 }
 
 .menu ul li a:hover {
@@ -91,6 +100,7 @@ h2 {
     height: 100%;
     background-color: rgb(51, 56, 66);
     position: absolute;
+    z-index: 2;
 }
 
 .leftBar-Buttom1 {
@@ -100,7 +110,6 @@ h2 {
     position: relative;
     padding: 10px 0;
     top: 40px;
-    z-index: 2;
 }
 
 .leftBar-Buttom1 .div1,
@@ -134,18 +143,16 @@ h2 {
     height: 100%;
     background-color: rgb(51, 56, 66);
     position: relative;
-    top: -40px;
     transition: all .5s;
     -o-transition: all .5s;
     -moz-transition: all .5s;
     -webkit-transition: all .5s;
-    z-index: 2;
     transform: translateX(-300px);
     -o-transform: translateX(-300px);
     -moz-transform: translateX(-300px);
     -webkit-transform: translateX(-300px);
     opacity: 0;
-    perspective: 1000px;
+    z-index: 4;
 }
 
 .leftBar-Menu-Click {
@@ -154,6 +161,7 @@ h2 {
     -o-transform: translateX(0px);
     -moz-transform: translateX(0px);
     -webkit-transform: translateX(0px);
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .leftBar-Buttom2 {
@@ -163,7 +171,6 @@ h2 {
     position: relative;
     padding: 10px 0;
     top: 50px;
-    z-index: 3;
     transition: all 0.3s;
     -o-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -297,15 +304,73 @@ h2 {
 }
 
 .pages {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
-    left: 50px;
+    left: 0;
     transition: all .5s;
-    transition-delay: .1s;
     -o-transition: all .5s;
     -moz-transition: all .5s;
     -webkit-transition: all .5s;
-    -o-transition-delay: .1s;
-    -moz-transition-delay: .1s;
-    -webkit-transition-delay: .1s;
+}
+
+.pages-title {
+    position: absolute;
+    top: 35px;
+    width: 100%;
+    height: 35px;
+    background-color: rgb(33, 37, 43);
+    z-index: 1;
+}
+
+.pages-title-option {
+    width: auto;
+    height: 35px;
+    background-color: rgb(33, 37, 43);
+    padding: 0 10px 0 10px;
+    float: left;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin-left: -1px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+#pages-title-option1 {
+    margin-left: 50px;
+}
+
+.pages-title-option img {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 7px 5px 0 0;
+}
+
+.pages-title-option p {
+    float: left;
+    line-height: 35px;
+    font-size: .8rem;
+}
+
+.pages-title-option-click {
+    background-color: rgb(40, 44, 52);
+}
+
+.pages-text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.pages-text-box {
+    margin: 90px 0 0 80px;
+}
+
+.pages-text-show {
+    display: block;
 }
