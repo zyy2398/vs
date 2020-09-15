@@ -2,9 +2,12 @@
     margin: 0;
     padding: 0;
     color: rgb(159, 178, 191);
+    font-family: "Source Serif Pro", "Noto Serif SC", -apple-system, "SF UI Text", "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-weight: 400;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -15,6 +18,19 @@ a {
 ul li {
     list-style-type: none;
     display: inline;
+}
+
+h2 {
+    border-left: 4px solid rgb(33, 37, 43);
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+.blur {
+    filter: blur(10px);
+    -o-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -webkit-filter: blur(10px);
 }
 
 /* 主盒子 */
@@ -74,7 +90,7 @@ ul li {
     width: 50px;
     height: 100%;
     background-color: rgb(51, 56, 66);
-    position: relative;
+    position: absolute;
 }
 
 .leftBar-Buttom1 {
@@ -87,13 +103,18 @@ ul li {
     z-index: 2;
 }
 
-.leftBar-Buttom1 .div1, .leftBar-Buttom1 .div2, .leftBar-Buttom1 .div3 {
+.leftBar-Buttom1 .div1,
+.leftBar-Buttom1 .div2,
+.leftBar-Buttom1 .div3 {
     width: 50%;
     height: 3px;
     border-radius: 10px;
     margin: 0 auto 5px;
     background-color: rgba(255, 255, 255, 0.5);
-    transition: all 0.3s;
+    transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
 }
 
 .leftBar-Buttom1:hover .div1 {
@@ -115,14 +136,24 @@ ul li {
     position: relative;
     top: -40px;
     transition: all .5s;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
     z-index: 2;
     transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -webkit-transform: translateX(-300px);
     opacity: 0;
+    perspective: 1000px;
 }
 
 .leftBar-Menu-Click {
     opacity: 1;
     transform: translateX(0px);
+    -o-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
 }
 
 .leftBar-Buttom2 {
@@ -134,27 +165,147 @@ ul li {
     top: 50px;
     z-index: 3;
     transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
 }
 
-.leftBar-Buttom2 .div1, .leftBar-Buttom2 .div2 {
+.leftBar-Buttom2 .div1,
+.leftBar-Buttom2 .div2 {
     width: 10%;
     height: 3px;
     border-radius: 10px;
     margin: 0 auto 5px;
     background-color: rgba(255, 255, 255, 1);
     transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
     position: relative;
 }
 
 .leftBar-Buttom2 .div1 {
     transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 
 .leftBar-Buttom2 .div2 {
     transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
     top: -8px;
 }
 
 .leftBar-Buttom2:hover {
     transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+.leftBar-Menu .img {
+    width: 100px;
+    height: 100px;
+    margin: 70px auto 50px;
+}
+
+.leftBar-Menu .img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.leftBar-Menu .img::after {
+    content: '';
+    display: block;
+    width: 270px;
+    height: 2px;
+    background-color: rgb(33, 37, 43);
+    margin: 20px 0 0 -85px;
+    border-radius: 5px;
+}
+
+.leftBar-Menu .img img:hover {
+    transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.leftBar-Menu .introduction {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.leftBar-Menu .introduction h2 {
+    width: 120%;
+    margin: 0 0 30px -10%;
+}
+
+.leftBar-Menu .introduction p {
+    margin-bottom: 10px;
+}
+
+.leftBar-Menu .connect {
+    position: absolute;
+    bottom: 20px;
+}
+
+.leftBar-Menu .connect a {
+    display: block;
+    float: left;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.leftBar-Menu .connect a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 3px;
+    background-color: #74b9ff;
+    margin: 10px auto 0;
+    transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.leftBar-Menu .connect a:hover {
+    transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    color: white;
+}
+
+.leftBar-Menu .connect a:hover::after {
+    width: 80%;
+}
+
+.pages {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    transition: all .5s;
+    transition-delay: .1s;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition-delay: .1s;
+    -moz-transition-delay: .1s;
+    -webkit-transition-delay: .1s;
 }
