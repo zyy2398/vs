@@ -1,19 +1,27 @@
-// 侧栏菜单
+// 侧栏菜单 && 打开模糊背景
 function MenuClick(a) {
     if (a) {
-        var menu = document.getElementById("leftBar-Menu");
-        menu.classList.add("leftBar-Menu-Click");
-        var pages = document.getElementById("pages");
-        pages.classList.add("blur");
-        var menu1 = document.getElementById("menu");
-        menu1.classList.add("blur");
+        var a = document.getElementById("leftBar-Menu");
+        a.classList.add("leftBar-Menu-Click");
+        var b = document.getElementById("pages");
+        b.classList.add("blur");
+        var c = document.getElementById("menu");
+        c.classList.add("blur");
+        var d = document.getElementById("pages2");
+        d.classList.add("blur");
+        var d = document.getElementById("footer");
+        d.classList.add("blur");
     } else {
-        var menu = document.getElementById("leftBar-Menu");
-        menu.classList.remove("leftBar-Menu-Click");
-        var pages = document.getElementById("pages");
-        pages.classList.remove("blur");
-        var menu1 = document.getElementById("menu");
-        menu1.classList.remove("blur");
+        var a = document.getElementById("leftBar-Menu");
+        a.classList.remove("leftBar-Menu-Click");
+        var b = document.getElementById("pages");
+        b.classList.remove("blur");
+        var c = document.getElementById("menu");
+        c.classList.remove("blur");
+        var d = document.getElementById("pages2");
+        d.classList.remove("blur");
+        var d = document.getElementById("footer");
+        d.classList.remove("blur");
     }
 }
 
