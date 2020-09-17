@@ -91,6 +91,9 @@ h2 {
     line-height: 35px;
     text-align: center;
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
 }
 
 .menu ul li a:hover {
@@ -440,7 +443,7 @@ h2 {
 }
 
 .leftBar-titleMenu h1 {
-    margin: 50px 0 0 20px;
+    margin: 40px 0 0 20px;
 }
 
 .leftBar-titleMenu ul {
@@ -451,6 +454,9 @@ h2 {
     display: block;
     padding: 10px;
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
 }
 
 .leftBar-titleMenu ul li::after {
@@ -460,6 +466,9 @@ h2 {
     height: 3px;
     background-color: #74b9ff;
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
 }
 
 .leftBar-titleMenu ul li:hover::after {
@@ -519,6 +528,9 @@ h2 {
     height: 3px;
     background-color: #74b9ff;
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
 }
 
 .leftBar-Pages-optine:hover::after {
@@ -533,6 +545,9 @@ h2 {
     width: 30px;
     vertical-align: middle;
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
 }
 
 .leftBar-Pages-optine p {
@@ -586,6 +601,9 @@ h2 {
     border-right: 1px solid black;
     margin-left: -1px;
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
     cursor: pointer;
 }
 
@@ -611,6 +629,9 @@ h2 {
 .pages-title-option img,
 .pages-title-option p {
     transition: all .2s;
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
 }
 
 .pages-title-option:hover p,
@@ -629,6 +650,9 @@ h2 {
     top: 0;
     left: 0;
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
     transform: translateY(500px);
     overflow-x: hidden;
     opacity: 0;
@@ -669,15 +693,36 @@ h2 {
 
 .pages-text-box {
     margin: 120px 0 0 100px;
+    padding-bottom: 50px;
 }
 
 .pages-text-box p {
     font-size: 1.2rem;
 }
 
+.pages-text-box a {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: #74b9ff;
+    color: white;
+    border-radius: 20px;
+    transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.pages-text-box a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px  #74d3ff;
+}
+
 .pages-text-box-img {
     margin: 40px 0;
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
 }
 
 .pages-text-box-img img {
@@ -686,6 +731,9 @@ h2 {
     max-height: 500px;
     border-radius: 10px;
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
 }
 
 .pages-text-box-img img:hover {
@@ -732,6 +780,9 @@ h2 {
 
 .footer p a {
     transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
 }
 
 .footer p a:hover {
@@ -768,6 +819,9 @@ h2 {
         max-height: 99999px;
         border-radius: 10px;
         transition: all .3s;
+        -o-transition: all .3s;
+        -moz-transition: all .3s;
+        -webkit-transition: all .3s;
     }
 
     .footer {
@@ -787,6 +841,10 @@ h2 {
     .leftBar-Me,
     .leftBar-titleMenu,
     .leftBar-Pages {
-        width: 90%;
+        width: 280px;
+    }
+
+    .leftBar-Me .connect a {
+        width: 140px;
     }
 }
