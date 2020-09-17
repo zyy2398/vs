@@ -20,7 +20,7 @@
         <!-- 顶部菜单 -->
         <div class="menu" id="menu">
             <img src="./favicon.ico" alt="favicon">
-            <ul>
+            <ul id="menuUL">
                 <li>
                     <a href="https://n0ts.cn/" target="_blank">首页(L)</a>
                 </li>
@@ -43,23 +43,22 @@
                     <a href="https://blog.n0ts.cn/msg" target="_blank">留言(J)</a>
                 </li>
             </ul>
-
-            <!-- 中间名字 -->
-            <p>I am N0ts</p>
+            <p>N0ts.html</p>
         </div>
 
         <!-- 左侧菜单 -->
         <div class="leftBar">
-            <div class="leftBar-Buttom1" onclick="MenuClick(true)">
+            <div class="leftBar-ButtomMe" onclick="MenuClick(true)">
                 <div class="div1"></div>
                 <div class="div2"></div>
                 <div class="div3"></div>
             </div>
+            <div class="leftBar-Pages" id="menuPages" onclick="titleMenuClick(true)"></div>
         </div>
 
-        <!-- 左侧拉出菜单 -->
-        <div class="leftBar-Menu" id="leftBar-Menu">
-            <div class="leftBar-Buttom2" onclick="MenuClick(false)">
+        <!-- 左侧拉出菜单 我 -->
+        <div class="leftBar-Me" id="leftBar-Me">
+            <div class="leftBar-ButtomClose" onclick="MenuClick(false)">
                 <div class="div1"></div>
                 <div class="div2"></div>
             </div>
@@ -67,7 +66,7 @@
                 <img src="https://q1.qlogo.cn/g?b=qq&nk=1656071287&s=640" alt="N0ts">
             </div>
             <div class="introduction">
-                <h2>N0ts</h2>
+                <h1>N0ts</h1>
                 <p>大专的咸鱼，爱好计算机、旅行、篮球，以及我公主般的女朋友。</p>
                 <p>即使前方的路看似绝境，也要有硬生生给自己开出一条路的勇气</p>
             </div>
@@ -77,25 +76,60 @@
             </div>
         </div>
 
+        <!-- 左侧拉出菜单 页面 -->
+        <div class="titleMenu" id="titleMenu">
+            <div class="leftBar-ButtomClose" onclick="titleMenuClick(false)">
+                <div class="div1"></div>
+                <div class="div2"></div>
+            </div>
+            <div class="titleMenu-box">
+                <h1>页面</h1>
+                <div class="titleMenu-optine" id="titleMenu-optine1" onclick="pages_title_option_click(1 ,false)">
+                    <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
+                    <p>hello world.md</p>
+                </div>
+                <div class="titleMenu-optine" id="titleMenu-optine2" onclick="pages_title_option_click(2, false)">
+                    <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
+                    <p>hello world.md</p>
+                </div>
+                <div class="titleMenu-optine" id="titleMenu-optine3" onclick="pages_title_option_click(3 ,false)">
+                    <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
+                    <p>hello world.md</p>
+                </div>
+                <div class="titleMenu-optine" id="titleMenu-optine4" onclick="pages_title_option_click(4 ,false)">
+                    <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
+                    <p>hello world.md</p>
+                </div>
+                <div class="titleMenu-optine" id="titleMenu-optine5" onclick="pages_title_option_click(5 ,false)">
+                    <img src="./images/yum.png" alt="yum">
+                    <p>My Life.md</p>
+                </div>
+            </div>
+        </div>
+
         <!-- 页面版块1 -->
         <div class="pages" id="pages">
 
             <!-- 页面选项卡 -->
             <div class="pages-title">
                 <div class="pages-title-option pages-title-option-click" id="pages-title-option1"
-                    onclick="pages_title_option_click(1)">
+                    onclick="pages_title_option_click(1, true)">
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
-                <div class="pages-title-option" id="pages-title-option2" onclick="pages_title_option_click(2)">
+                <div class="pages-title-option" id="pages-title-option2" onclick="pages_title_option_click(2, true)">
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
-                <div class="pages-title-option" id="pages-title-option3" onclick="pages_title_option_click(3)">
+                <div class="pages-title-option" id="pages-title-option3" onclick="pages_title_option_click(3, true)">
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
-                <div class="pages-title-option" id="pages-title-option4" onclick="pages_title_option_click(4)">
+                <div class="pages-title-option" id="pages-title-option4" onclick="pages_title_option_click(4, true)">
+                    <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
+                    <p>hello world.md</p>
+                </div>
+                <div class="pages-title-option" id="pages-title-option5" onclick="pages_title_option_click(5, true)" style="display: none;">
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
@@ -107,7 +141,7 @@
                     <h1>你好，我是N0ts<br />热爱编程，旅游，运动。</h1>
                     <div class="pages-text-box-img">
                         <img src="./images/lovexhj.jpg" alt="lovexhj" class="n0ts-img">
-                        <h6>❤女朋友写的</h6>
+                        <h6>❤我的小公主写的</h6>
                     </div>
                     <p>小时候总是不爱去旅行，但现在却相反；</p>
                     <p>很喜欢去外面旅行，欣赏风景。</p>
@@ -144,7 +178,11 @@
                     <h1>test4</h1>
                 </div>
             </div>
-
+            <div class="pages-text" id="pages-text5">
+                <div class="pages-text-box">
+                    <h1>施工中...</h1>
+                </div>
+            </div>
         </div>
 
         <!-- 页面版块2 -->
