@@ -1,5 +1,5 @@
 // 侧栏菜单 && 打开模糊背景
-function MenuClick(a) {
+function MeClick(a) {
 
     if (a) {
         var a = document.getElementById("leftBar-Me");
@@ -26,10 +26,10 @@ function MenuClick(a) {
     }
 }
 
-function titleMenuClick(a) {
+function MenuClick(a) {
     if (a) {
-        var a = document.getElementById("titleMenu");
-        a.classList.add("titleMenu-Click");
+        var a = document.getElementById("leftBar-titleMenu");
+        a.classList.add("leftBar-titleMenu-Click");
         var b = document.getElementById("pages");
         b.classList.add("blur");
         var c = document.getElementById("menu");
@@ -39,8 +39,34 @@ function titleMenuClick(a) {
         var e = document.getElementById("footer");
         e.classList.add("blur");
     } else {
-        var a = document.getElementById("titleMenu");
-        a.classList.remove("titleMenu-Click");
+        var a = document.getElementById("leftBar-titleMenu");
+        a.classList.remove("leftBar-titleMenu-Click");
+        var b = document.getElementById("pages");
+        b.classList.remove("blur");
+        var c = document.getElementById("menu");
+        c.classList.remove("blur");
+        var d = document.getElementById("pages2");
+        d.classList.remove("blur");
+        var e = document.getElementById("footer");
+        e.classList.remove("blur");
+    }
+}
+
+function PagesClick(a) {
+    if (a) {
+        var a = document.getElementById("leftBar-Pages");
+        a.classList.add("leftBar-Pages-Click");
+        var b = document.getElementById("pages");
+        b.classList.add("blur");
+        var c = document.getElementById("menu");
+        c.classList.add("blur");
+        var d = document.getElementById("pages2");
+        d.classList.add("blur");
+        var e = document.getElementById("footer");
+        e.classList.add("blur");
+    } else {
+        var a = document.getElementById("leftBar-Pages");
+        a.classList.remove("leftBar-Pages-Click");
         var b = document.getElementById("pages");
         b.classList.remove("blur");
         var c = document.getElementById("menu");
@@ -85,16 +111,20 @@ function pages_title_option_click(a, b) {
 
 // 890宽度显示页面菜单 && 1180宽度显示顶部菜单
 window.onresize = function () {
-    var menuTitle = document.getElementById("menuPages");
-    var menu = document.getElementById("menuUL");
+    var menuPages = document.getElementById("menuPages");
+    var menuUL = document.getElementById("menuUL");
+    var leftBar_ButtomMenu = document.getElementById("leftBar-ButtomMenu");
     if (document.documentElement.clientWidth <= 890) {
-        menuTitle.style.display = "block";
+        menuPages.style.display = "block";
     } else {
-        menuTitle.style.display = "none";
+        menuPages.style.display = "none";
     }
+
     if (document.documentElement.clientWidth <= 1180) {
-        menu.style.display = "none";
+        menuUL.style.display = "none";
+        leftBar_ButtomMenu.style.display = "block";
     } else {
-        menu.style.display = "block";
+        menuUL.style.display = "block";
+        leftBar_ButtomMenu.style.display = "none";
     }
 }

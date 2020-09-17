@@ -112,19 +112,73 @@ h2 {
     z-index: 2;
 }
 
-.leftBar-ButtomMe {
+/* 三个按钮 */
+.leftBar-ButtomMe,
+.leftBar-ButtomMenu,
+.leftBar-ButtomPages {
     width: 100%;
     height: 30px;
     cursor: pointer;
     position: relative;
     top: 30px;
+}
+
+/* 关于我按钮 */
+.leftBar-ButtomMe {
+    overflow: hidden;
     margin: 10px 0;
     padding: 10px 0 0;
 }
 
-.leftBar-ButtomMe .div1,
-.leftBar-ButtomMe .div2,
-.leftBar-ButtomMe .div3 {
+.leftBar-ButtomMe::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    margin-left: -6px;
+}
+
+.leftBar-ButtomMe::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    margin-left: -12.5px;
+}
+
+.leftBar-ButtomMe::before,
+.leftBar-ButtomMe::after {
+    transition: all .3s;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.leftBar-ButtomMe:hover::before,
+.leftBar-ButtomMe:hover::after {
+    background-color: white;
+}
+
+/* 顶部菜单按钮 */
+.leftBar-ButtomMenu {
+    margin: 10px 0;
+    padding: 10px 0 0;
+    display: none;
+}
+
+.leftBar-ButtomMenu .div1,
+.leftBar-ButtomMenu .div2,
+.leftBar-ButtomMenu .div3 {
     width: 50%;
     height: 3px;
     border-radius: 10px;
@@ -136,45 +190,41 @@ h2 {
     -webkit-transition: all .3s;
 }
 
-.leftBar-ButtomMe:hover .div1 {
+.leftBar-ButtomMenu:hover .div1 {
     background-color: rgba(255, 255, 255, 1);
 }
 
-.leftBar-ButtomMe:hover .div2 {
+.leftBar-ButtomMenu:hover .div2 {
     background-color: rgba(255, 255, 255, 1);
 }
 
-.leftBar-ButtomMe:hover .div3 {
+.leftBar-ButtomMenu:hover .div3 {
     background-color: rgba(255, 255, 255, 1);
 }
 
-.leftBar-Pages {
-    width: 100%;
-    height: 30px;
-    position: relative;
-    top: 30px;
-    cursor: pointer;
+/* 页面按钮 */
+.leftBar-ButtomPages {
     display: none;
     padding: 10px 0 0;
     margin: 10px 0;
 }
 
-.leftBar-Pages::before {
+.leftBar-ButtomPages::before {
     content: '';
     position: absolute;
     top: 0;
     left: 13px;
 }
 
-.leftBar-Pages::after {
+.leftBar-ButtomPages::after {
     content: '';
     position: absolute;
     top: 5px;
     left: 21px;
 }
 
-.leftBar-Pages::before,
-.leftBar-Pages::after {
+.leftBar-ButtomPages::before,
+.leftBar-ButtomPages::after {
     transition: all .3s;
     -o-transition: all .3s;
     -moz-transition: all .3s;
@@ -186,39 +236,15 @@ h2 {
     border-radius: 2px;
 }
 
-.leftBar-Pages:hover::before {
+.leftBar-ButtomPages:hover::before {
     border: 3px solid white;
 }
 
-.leftBar-Pages:hover::after {
+.leftBar-ButtomPages:hover::after {
     border: 3px solid white;
 }
 
-.leftBar-Me {
-    width: 300px;
-    height: 100%;
-    background-color: rgb(51, 56, 66);
-    position: relative;
-    transition: all .5s;
-    -o-transition: all .5s;
-    -moz-transition: all .5s;
-    -webkit-transition: all .5s;
-    transform: translateX(-300px);
-    -o-transform: translateX(-300px);
-    -moz-transform: translateX(-300px);
-    -webkit-transform: translateX(-300px);
-    z-index: 4;
-}
-
-.leftBar-Me-Click {
-    opacity: 1;
-    transform: translateX(0px);
-    -o-transform: translateX(0px);
-    -moz-transform: translateX(0px);
-    -webkit-transform: translateX(0px);
-    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
-}
-
+/* 关闭菜单按钮 */
 .leftBar-ButtomClose {
     width: 100%;
     height: 20px;
@@ -266,6 +292,31 @@ h2 {
     -o-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
+}
+
+/* 拉出菜单 我 */
+.leftBar-Me {
+    width: 300px;
+    height: 100%;
+    background-color: rgb(51, 56, 66);
+    position: relative;
+    transition: all .5s;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -webkit-transform: translateX(-300px);
+    z-index: 4;
+}
+
+.leftBar-Me-Click {
+    transform: translateX(0px);
+    -o-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .leftBar-Me .img {
@@ -362,7 +413,8 @@ h2 {
     width: 80%;
 }
 
-.titleMenu {
+/* 拉出菜单 顶部菜单 */
+.leftBar-titleMenu {
     width: 300px;
     height: 100%;
     position: absolute;
@@ -379,7 +431,61 @@ h2 {
     -webkit-transform: translateX(-300px);
 }
 
-.titleMenu-Click {
+.leftBar-titleMenu-Click {
+    transform: translateX(0px);
+    -o-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.leftBar-titleMenu h1 {
+    margin: 50px 0 0 20px;
+}
+
+.leftBar-titleMenu ul {
+    margin: 20px 0 0 40px;
+}
+
+.leftBar-titleMenu ul li {
+    display: block;
+    padding: 10px;
+    transition: all .3s;
+}
+
+.leftBar-titleMenu ul li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #74b9ff;
+    transition: all .3s;
+}
+
+.leftBar-titleMenu ul li:hover::after {
+    width: 80%;
+    display: block;
+}
+
+/* 拉出菜单 页面菜单 */
+.leftBar-Pages {
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 4;
+    background-color: rgb(51, 56, 66);
+    transition: all .5s;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -webkit-transform: translateX(-300px);
+}
+
+.leftBar-Pages-Click {
     opacity: 1;
     transform: translateX(0px);
     -o-transform: translateX(0px);
@@ -388,24 +494,24 @@ h2 {
     box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.titleMenu-box {
+.leftBar-Pages-box {
     width: 100%;
     height: auto;
     position: absolute;
     top: 80px;
 }
 
-.titleMenu-box h1 {
+.leftBar-Pages-box h1 {
     margin: 0 0 40px 20px;
 }
 
-.titleMenu-optine {
+.leftBar-Pages-optine {
     width: 100%;
     height: 60px;
     padding: 0 25px;
 }
 
-.titleMenu-optine::after {
+.leftBar-Pages-optine::after {
     content: '';
     display: block;
     margin-top: 10px;
@@ -415,25 +521,26 @@ h2 {
     transition: all .3s;
 }
 
-.titleMenu-optine:hover::after {
+.leftBar-Pages-optine:hover::after {
     width: 80%;
 }
 
-.titleMenu-optine:hover img {
+.leftBar-Pages-optine:hover img {
     transform: rotate(360deg);
 }
 
-.titleMenu-optine img {
+.leftBar-Pages-optine img {
     width: 30px;
     vertical-align: middle;
     transition: all .3s;
 }
 
-.titleMenu-optine p {
+.leftBar-Pages-optine p {
     display: inline-block;
     font-size: 1.1rem;
 }
 
+/* 页面 */
 .pages {
     width: 65%;
     height: 100%;
@@ -635,6 +742,7 @@ h2 {
     float: right;
 }
 
+/* 自适应 */
 @media screen and (max-width: 890px) {
     .pages {
         width: 100%;
@@ -642,5 +750,43 @@ h2 {
 
     .pages2 {
         display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .pages-title {
+        display: none;
+    }
+
+    .pages-text-box {
+        margin: 80px 0 0 65px;
+    }
+
+    .pages-text-box-img img {
+        max-width: 85%;
+        min-width: 200px;
+        max-height: 99999px;
+        border-radius: 10px;
+        transition: all .3s;
+    }
+
+    .footer {
+        height: 50px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .footer p {
+        line-height: 0px;
+    }
+
+    .footer .right {
+        float: none;
+    }
+
+    .leftBar-Me,
+    .leftBar-titleMenu,
+    .leftBar-Pages {
+        width: 90%;
     }
 }

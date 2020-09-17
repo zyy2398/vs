@@ -46,19 +46,20 @@
             <p>N0ts.html</p>
         </div>
 
-        <!-- 左侧菜单 -->
+        <!-- 左侧菜单按钮 -->
         <div class="leftBar">
-            <div class="leftBar-ButtomMe" onclick="MenuClick(true)">
+            <div class="leftBar-ButtomMe" onclick="MeClick(true)"></div>
+            <div class="leftBar-ButtomMenu" id="leftBar-ButtomMenu" onclick="MenuClick(true)">
                 <div class="div1"></div>
                 <div class="div2"></div>
                 <div class="div3"></div>
             </div>
-            <div class="leftBar-Pages" id="menuPages" onclick="titleMenuClick(true)"></div>
+            <div class="leftBar-ButtomPages" id="menuPages" onclick="PagesClick(true)"></div>
         </div>
 
         <!-- 左侧拉出菜单 我 -->
         <div class="leftBar-Me" id="leftBar-Me">
-            <div class="leftBar-ButtomClose" onclick="MenuClick(false)">
+            <div class="leftBar-ButtomClose" onclick="MeClick(false)">
                 <div class="div1"></div>
                 <div class="div2"></div>
             </div>
@@ -76,31 +77,63 @@
             </div>
         </div>
 
-        <!-- 左侧拉出菜单 页面 -->
-        <div class="titleMenu" id="titleMenu">
-            <div class="leftBar-ButtomClose" onclick="titleMenuClick(false)">
+        <!-- 左侧拉出菜单 顶部菜单 -->
+        <div class="leftBar-titleMenu" id="leftBar-titleMenu">
+            <div class="leftBar-ButtomClose" onclick="MenuClick(false)">
                 <div class="div1"></div>
                 <div class="div2"></div>
             </div>
-            <div class="titleMenu-box">
+            <h1>导航</h1>
+            <ul>
+                <li>
+                    <a href="https://n0ts.cn/" target="_blank">首页</a>
+                </li>
+                <li>
+                    <a href="https://blog.n0ts.cn/me" target="_blank">关于我</a>
+                </li>
+                <li>
+                    <a href="https://blog.n0ts.cn/category/mywork" target="_blank">我的垃圾项目</a>
+                </li>
+                <li>
+                    <a href="https://lovexhj.cn/" target="_blank">我的爱人</a>
+                </li>
+                <li>
+                    <a href="https://note.n0ts.cn/" target="_blank">笔记</a>
+                </li>
+                <li>
+                    <a href="https://blog.n0ts.cn/" target="_blank">博客</a>
+                </li>
+                <li>
+                    <a href="https://blog.n0ts.cn/msg" target="_blank">留言</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 左侧拉出菜单 页面 -->
+        <div class="leftBar-Pages" id="leftBar-Pages">
+            <div class="leftBar-ButtomClose" onclick="PagesClick(false)">
+                <div class="div1"></div>
+                <div class="div2"></div>
+            </div>
+            <div class="leftBar-Pages-box">
                 <h1>页面</h1>
-                <div class="titleMenu-optine" id="titleMenu-optine1" onclick="pages_title_option_click(1 ,false)">
+                <div class="leftBar-Pages-optine" id="leftBar-Pages-optine1" onclick="pages_title_option_click(1 ,false)">
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
-                <div class="titleMenu-optine" id="titleMenu-optine2" onclick="pages_title_option_click(2, false)">
+                <div class="leftBar-Pages-optine" id="leftBar-Pages-optine2" onclick="pages_title_option_click(2, false)">
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
-                <div class="titleMenu-optine" id="titleMenu-optine3" onclick="pages_title_option_click(3 ,false)">
+                <div class="leftBar-Pages-optine" id="leftBar-Pages-optine3" onclick="pages_title_option_click(3 ,false)">
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
-                <div class="titleMenu-optine" id="titleMenu-optine4" onclick="pages_title_option_click(4 ,false)">
+                <div class="leftBar-Pages-optine" id="leftBar-Pages-optine4" onclick="pages_title_option_click(4 ,false)">
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
-                <div class="titleMenu-optine" id="titleMenu-optine5" onclick="pages_title_option_click(5 ,false)">
+                <div class="leftBar-Pages-optine" id="leftBar-Pages-optine5" onclick="pages_title_option_click(5 ,false)">
                     <img src="./images/yum.png" alt="yum">
                     <p>My Life.md</p>
                 </div>
@@ -129,7 +162,8 @@
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
-                <div class="pages-title-option" id="pages-title-option5" onclick="pages_title_option_click(5, true)" style="display: none;">
+                <div class="pages-title-option" id="pages-title-option5" onclick="pages_title_option_click(5, true)"
+                    style="display: none;">
                     <img src="./images/stuck_out_tongue.png" alt="stuck_out_tongue">
                     <p>hello world.md</p>
                 </div>
