@@ -128,3 +128,22 @@ window.onresize = function () {
         leftBar_ButtomMenu.style.display = "none";
     }
 }
+
+function resize() {
+    var menuPages = document.getElementById("menuPages");
+    var menuUL = document.getElementById("menuUL");
+    var leftBar_ButtomMenu = document.getElementById("leftBar-ButtomMenu");
+    if (document.documentElement.clientWidth <= 1080) {
+        menuPages.style.display = "block";
+    } else {
+        menuPages.style.display = "none";
+    }
+
+    if (document.documentElement.clientWidth <= 1180) {
+        menuUL.style.display = "none";
+        leftBar_ButtomMenu.style.display = "block";
+    } else {
+        menuUL.style.display = "block";
+        leftBar_ButtomMenu.style.display = "none";
+    }
+}
