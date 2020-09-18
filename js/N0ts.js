@@ -109,12 +109,12 @@ function pages_title_option_click(a, b) {
     pages_title_option = a;
 }
 
-// 890宽度显示页面菜单 && 1180宽度显示顶部菜单
+// 1080宽度显示页面菜单 && 1180宽度显示顶部菜单
 window.onresize = function () {
     var menuPages = document.getElementById("menuPages");
     var menuUL = document.getElementById("menuUL");
     var leftBar_ButtomMenu = document.getElementById("leftBar-ButtomMenu");
-    if (document.documentElement.clientWidth <= 890) {
+    if (document.documentElement.clientWidth <= 1080) {
         menuPages.style.display = "block";
     } else {
         menuPages.style.display = "none";
