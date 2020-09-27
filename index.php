@@ -1,12 +1,20 @@
+<?php
+    $public = file_get_contents("https://gitee.com/api/v5/users/nutssss/repos?access_token=e4e229180631133f12724a504f1c7ae9&type=all&sort=full_name&page=1&per_page=20");
+    $public = json_decode($public, true);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>这里是网站标题</title>
+    <!-- <title>这里是网站标题</title>
     <meta name="description" content="这里是网站介绍">
-    <meta name="keywords" content="这里是网站关键词">
+    <meta name="keywords" content="这里是网站关键词"> -->
+    <title>N0ts | 一个热爱游戏的咸鱼</title>
+    <meta name="description" content="即使前方的路看似绝境，也要有硬生生给自己开出一条路的勇气">
+    <meta name="keywords" content="n0ts,nutssss,坚果,主页,博客,tqy,xhj">
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/viewer.min.css">
@@ -233,8 +241,7 @@
                         <p>以兴趣作为核心，继续向前奔跑</p>
                         <p>即使前方的路看似绝境，也要有硬生生给自己开出一条路的勇气</p>
                         <div class="pages-text-box-img">
-                            <img src="https://nutssss.gitee.io/nutssss-index2/images/index1.png" alt="index1"
-                                class="n0ts-img">
+                            <img src="./images/index1.png" alt="index1" class="n0ts-img">
                             <h6>这个垃圾主页</h6>
                         </div>
                     </div>
@@ -243,15 +250,17 @@
                     <div class="pages-text-box">
                         <h1>我的开源垃圾</h1>
                         <ul class="giteeBoxUL">
+                            <?php for($i = 0; $i < count($public); $i++):?>
                             <li>
                                 <p class="giteeBox-Title">
-                                    <a href="#" style="color: rgb(110, 110, 110);">N0tssss</a>
+                                    <a href="<?php echo $public[$i]['namespace']['html_url'];?>" style="color: rgb(110, 110, 110);"><?php echo substr($public[$i]['human_name'], 0, strrpos($public[$i]['full_name'], '/'));?></a>
                                     /
-                                    <a href="#">lovexhjTo520</a>
+                                    <a href="<?php echo substr($public[$i]['html_url'], 0, strrpos($public[$i]['html_url'], '.git'));?>"><?php echo substr($public[$i]['full_name'], strrpos($public[$i]['human_name'], '/') + 1);?></a>
                                 </p>
-                                <p class="giteeBox-Text">项目介绍项目介绍项目介绍项目介绍项目介绍</p>
+                                <p class="giteeBox-Text"><?php echo $public[$i]['description'];?></p>
                                 <a href="#" class="aClick show">查看</a>
                             </li>
+                            <?php endfor;?>
                         </ul>
                     </div>
                 </div>
