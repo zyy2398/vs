@@ -851,6 +851,27 @@ h2 {
     border-radius: 20px;
     position: relative;
     margin: 50px 0;
+    transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+}
+
+.giteeBoxUL li::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(https://gitee.com/static/images/logo.svg);
+    background-size: cover;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.giteeBoxUL li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
 }
 
 .giteeBoxUL li a {

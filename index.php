@@ -1,5 +1,9 @@
 <?php
-    $public = file_get_contents("https://gitee.com/api/v5/users/nutssss/repos?access_token=e4e229180631133f12724a504f1c7ae9&type=all&sort=full_name&page=1&per_page=20");
+    // access_token
+    // 申请方法：码云gitee - 个人设置 - 安全设置，私人令牌 - 
+    $token = "0d4656bf06d57b8da4cee1fadba777e6";
+    
+    $public = file_get_contents("https://gitee.com/api/v5/users/nutssss/repos?access_token=" . $token . "&type=all&sort=full_name&page=1&per_page=20");
     $public = json_decode($public, true);
 ?>
 
@@ -253,12 +257,12 @@
                             <?php for($i = 0; $i < count($public); $i++):?>
                             <li>
                                 <p class="giteeBox-Title">
-                                    <a href="<?php echo $public[$i]['namespace']['html_url'];?>" style="color: rgb(110, 110, 110);"><?php echo substr($public[$i]['human_name'], 0, strrpos($public[$i]['full_name'], '/'));?></a>
+                                    <a target="_blank" href="<?php echo $public[$i]['namespace']['html_url'];?>" style="color: rgb(110, 110, 110);"><?php echo substr($public[$i]['human_name'], 0, strrpos($public[$i]['full_name'], '/'));?></a>
                                     /
-                                    <a href="<?php echo substr($public[$i]['html_url'], 0, strrpos($public[$i]['html_url'], '.git'));?>"><?php echo substr($public[$i]['full_name'], strrpos($public[$i]['human_name'], '/') + 1);?></a>
+                                    <a target="_blank" href="<?php echo substr($public[$i]['html_url'], 0, strrpos($public[$i]['html_url'], '.git'));?>"><?php echo substr($public[$i]['full_name'], strrpos($public[$i]['human_name'], '/') + 1);?></a>
                                 </p>
                                 <p class="giteeBox-Text"><?php echo $public[$i]['description'];?></p>
-                                <a href="#" class="aClick show">查看</a>
+                                <a target="_blank" href="<?php echo substr($public[$i]['html_url'], 0, strrpos($public[$i]['html_url'], '.git'));?>" class="aClick show">查看</a>
                             </li>
                             <?php endfor;?>
                         </ul>
