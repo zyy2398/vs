@@ -1018,4 +1018,8 @@ h2 {
         height: auto;
         padding-left: 10px;
     }
+
+    .giteeBoxUL .giteeBox-Time {
+        position: unset;
+    }
 }

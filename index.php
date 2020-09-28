@@ -1,7 +1,7 @@
 <?php
     // access_token
     // 申请方法：码云gitee - 个人设置 - 安全设置，私人令牌 - 权限给issues与个人信息获取
-    $token = "";
+    $token = "0d4656bf06d57b8da4cee1fadba777e6";
     
     $UserInfo = file_get_contents("https://gitee.com/api/v5/users/nutssss/repos?access_token=" . $token . "&type=all&sort=full_name&page=1&per_page=20");
     $UserInfo = json_decode($UserInfo, true);
@@ -13,9 +13,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>这里是网站标题</title>
+    <!-- <title>这里是网站标题</title>
     <meta name="description" content="这里是网站介绍">
-    <meta name="keywords" content="这里是网站关键词">
+    <meta name="keywords" content="这里是网站关键词"> -->
+    <title>N0ts | 一个热爱游戏的咸鱼</title>
+    <meta name="description" content="即使前方的路看似绝境，也要有硬生生给自己开出一条路的勇气">
+    <meta name="keywords" content="n0ts,nutssss,坚果,主页,博客,tqy,xhj">
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/viewer.min.css">
