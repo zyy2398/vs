@@ -572,6 +572,7 @@ h2 {
     -o-transform: translateX(-300px);
     -moz-transform: translateX(-300px);
     -webkit-transform: translateX(-300px);
+    overflow: hidden;
 }
 
 .leftBar-Pages-Click {
@@ -595,7 +596,7 @@ h2 {
 }
 
 .leftBar-Pages-optine {
-    width: 85%;
+    width: 100%;
     height: 60px;
     padding: 0 25px;
 }
