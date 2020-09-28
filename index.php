@@ -1,10 +1,10 @@
 <?php
     // access_token
-    // 申请方法：码云gitee - 个人设置 - 安全设置，私人令牌 - 
-    $token = "0d4656bf06d57b8da4cee1fadba777e6";
+    // 申请方法：码云gitee - 个人设置 - 安全设置，私人令牌 - 权限给issues与个人信息获取
+    $token = "";
     
-    $public = file_get_contents("https://gitee.com/api/v5/users/nutssss/repos?access_token=" . $token . "&type=all&sort=full_name&page=1&per_page=20");
-    $public = json_decode($public, true);
+    $UserInfo = file_get_contents("https://gitee.com/api/v5/users/nutssss/repos?access_token=" . $token . "&type=all&sort=full_name&page=1&per_page=20");
+    $UserInfo = json_decode($UserInfo, true);
 ?>
 
 <!DOCTYPE html>
@@ -13,12 +13,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>这里是网站标题</title>
+    <title>这里是网站标题</title>
     <meta name="description" content="这里是网站介绍">
-    <meta name="keywords" content="这里是网站关键词"> -->
-    <title>N0ts | 一个热爱游戏的咸鱼</title>
-    <meta name="description" content="即使前方的路看似绝境，也要有硬生生给自己开出一条路的勇气">
-    <meta name="keywords" content="n0ts,nutssss,坚果,主页,博客,tqy,xhj">
+    <meta name="keywords" content="这里是网站关键词">
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/viewer.min.css">
@@ -216,7 +213,7 @@
 
                 <!-- 页面 -->
                 <div class="pages-text pages-text-show" id="pages-text1">
-                    <div class="pages-text-box">
+                    <div class="pages-text-box" id="meMD">
                         <h1>你好，我是N0ts<br />热爱编程，旅游，运动。</h1>
                         <div class="pages-text-box-img">
                             <img src="./images/lovexhj.jpg" alt="lovexhj" class="n0ts-img">
@@ -254,15 +251,16 @@
                     <div class="pages-text-box">
                         <h1>我的开源垃圾</h1>
                         <ul class="giteeBoxUL">
-                            <?php for($i = 0; $i < count($public); $i++):?>
+                            <?php for($i = 0; $i < count($UserInfo); $i++):?>
                             <li>
                                 <p class="giteeBox-Title">
-                                    <a target="_blank" href="<?php echo $public[$i]['namespace']['html_url'];?>" style="color: rgb(110, 110, 110);"><?php echo substr($public[$i]['human_name'], 0, strrpos($public[$i]['full_name'], '/'));?></a>
+                                    <a target="_blank" href="<?php echo $UserInfo[$i]['namespace']['html_url'];?>" style="color: rgb(110, 110, 110);"><?php echo substr($UserInfo[$i]['human_name'], 0, strrpos($UserInfo[$i]['full_name'], '/'));?></a>
                                     /
-                                    <a target="_blank" href="<?php echo substr($public[$i]['html_url'], 0, strrpos($public[$i]['html_url'], '.git'));?>"><?php echo substr($public[$i]['full_name'], strrpos($public[$i]['human_name'], '/') + 1);?></a>
+                                    <a target="_blank" href="<?php echo substr($UserInfo[$i]['html_url'], 0, strrpos($UserInfo[$i]['html_url'], '.git'));?>"><?php echo substr($UserInfo[$i]['full_name'], strrpos($UserInfo[$i]['human_name'], '/') + 1);?></a>
                                 </p>
-                                <p class="giteeBox-Text"><?php echo $public[$i]['description'];?></p>
-                                <a target="_blank" href="<?php echo substr($public[$i]['html_url'], 0, strrpos($public[$i]['html_url'], '.git'));?>" class="aClick show">查看</a>
+                                <p class="giteeBox-Text"><?php echo $UserInfo[$i]['description'];?></p>
+                                <p class="giteeBox-Time">最后更新：<?php echo substr($UserInfo[$i]['updated_at'], 0, strrpos($UserInfo[$i]['updated_at'], 'T'));?></p>
+                                <a target="_blank" href="<?php echo substr($UserInfo[$i]['html_url'], 0, strrpos($UserInfo[$i]['html_url'], '.git'));?>" class="aClick show">查看</a>
                             </li>
                             <?php endfor;?>
                         </ul>
@@ -343,9 +341,8 @@
     </div>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/N0ts.js"></script>
     <script src="./js/viewer.min.js"></script>
-    <script src="./js//lovetime.js"></script>
+    <script src="./js/N0ts.js"></script>
 </body>
 
 </html>

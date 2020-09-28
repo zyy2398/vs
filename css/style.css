@@ -595,7 +595,7 @@ h2 {
 }
 
 .leftBar-Pages-optine {
-    width: 100%;
+    width: 85%;
     height: 60px;
     padding: 0 25px;
 }
@@ -897,10 +897,17 @@ h2 {
     margin-bottom: 10px;
 }
 
-.giteeBoxUL .giteeBox-Text {
+.giteeBoxUL .giteeBox-Text, .giteeBoxUL .giteeBox-Time {
     font-size: 1rem;
     margin-bottom: 30px;
     padding: 0 5px;
+}
+
+.giteeBoxUL .giteeBox-Time {
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: -20px;
 }
 
 .giteeBoxUL .show {
@@ -977,6 +984,7 @@ h2 {
     }
 
     .footer {
+        min-width: 280px;
         height: auto;
         text-align: center;
         padding: 10px 0;
